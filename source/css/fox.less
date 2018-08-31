@@ -1,0 +1,134 @@
+@base-color: #4ea7f9;
+@base-color-e2: #e2e2e2;
+@base-color-fc: #fcfcfc;
+
+* {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Source Sans Pro", "Montserrat", "Roboto", Helvetica, Arial, sans-serif;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  color: #555;
+}
+
+body {
+  background: @base-color-fc;
+  a {
+    text-decoration: none;
+    &:hover {
+      color: @base-color;
+    }
+  }
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-button:vertical {
+  display: none
+}
+
+::-webkit-scrollbar-corner, ::-webkit-scrollbar-track {
+  background: @base-color-e2
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: @base-color
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: @base-color
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+  background-color: @base-color
+}
+
+/* header 菜单样式 */
+.header {
+  height: 65px;
+  line-height: 65px;
+  .main-container {
+    padding: 0;
+    /* logo-container */
+    .logo-container {
+      float: left;
+      margin-left: 65px;
+      .logo-link {
+        display: block;
+        overflow: hidden;
+        &:hover {
+          opacity: .7;
+          h2 {
+            color: @base-color;
+          }
+        }
+        img {
+          max-height: 65px;
+          max-width: 120px;
+          width: auto;
+          float: left;
+        }
+        h2 {
+          margin: 0 20px;
+          vertical-align: middle;
+          float: right;
+        }
+      }
+
+    }
+
+    /* menu-container */
+    .menu-container {
+      overflow: hidden;
+      .menu-inner {
+        float: right;
+        margin-right: 65px;
+        li {
+          display: inline-block;
+          padding: 0 15px;
+          a {
+            display: block;
+            position: relative;
+            padding: 0 10px;
+            &:after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 0;
+              height: 2px;
+              border-radius: 0;
+              background-color: @base-color;
+              transition: all .3s;
+              -webkit-transition: all .3s;
+            }
+            &:hover {
+              background-color: fade(@base-color, 5%);
+              &:after {
+                width: 100%;
+              }
+            }
+
+          }
+        }
+
+      }
+    }
+  }
+
+}
+
+.main-container {
+  width: 1200px;
+  padding:20px;
+}
+
+.content-inner{
+  margin-top: 65px;
+  border:1px dashed @base-color;
+  padding:20px;
+}

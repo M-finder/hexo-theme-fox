@@ -1,0 +1,117 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Source Sans Pro", "Montserrat", "Roboto", Helvetica, Arial, sans-serif;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  color: #555;
+}
+body {
+  background: #fcfcfc;
+}
+body a {
+  text-decoration: none;
+}
+body a:hover {
+  color: #4ea7f9;
+}
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-button:vertical {
+  display: none;
+}
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track {
+  background: #e2e2e2;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: #4ea7f9;
+}
+::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: #4ea7f9;
+}
+::-webkit-scrollbar-thumb:vertical:active {
+  background-color: #4ea7f9;
+}
+/* header 菜单样式 */
+.header {
+  height: 65px;
+  line-height: 65px;
+}
+.header .main-container {
+  padding: 0;
+  /* logo-container */
+  /* menu-container */
+}
+.header .main-container .logo-container {
+  float: left;
+  margin-left: 65px;
+}
+.header .main-container .logo-container .logo-link {
+  display: block;
+  overflow: hidden;
+}
+.header .main-container .logo-container .logo-link:hover {
+  opacity: .7;
+}
+.header .main-container .logo-container .logo-link:hover h2 {
+  color: #4ea7f9;
+}
+.header .main-container .logo-container .logo-link img {
+  max-height: 65px;
+  max-width: 120px;
+  width: auto;
+  float: left;
+}
+.header .main-container .logo-container .logo-link h2 {
+  margin: 0 20px;
+  vertical-align: middle;
+  float: right;
+}
+.header .main-container .menu-container {
+  overflow: hidden;
+}
+.header .main-container .menu-container .menu-inner {
+  float: right;
+  margin-right: 65px;
+}
+.header .main-container .menu-container .menu-inner li {
+  display: inline-block;
+  padding: 0 15px;
+}
+.header .main-container .menu-container .menu-inner li a {
+  display: block;
+  position: relative;
+  padding: 0 10px;
+}
+.header .main-container .menu-container .menu-inner li a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 0;
+  background-color: #4ea7f9;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.header .main-container .menu-container .menu-inner li a:hover {
+  background-color: rgba(78, 167, 249, 0.05);
+}
+.header .main-container .menu-container .menu-inner li a:hover:after {
+  width: 100%;
+}
+.main-container {
+  width: 1200px;
+  padding: 20px;
+}
+.content-inner {
+  margin-top: 65px;
+  border: 1px dashed #4ea7f9;
+  padding: 20px;
+}
+/*# sourceMappingURL=fox.css.map */
