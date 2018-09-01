@@ -2,7 +2,10 @@
   "name": "hexo-theme-fox",
   "version": "1.0.0",
   "description": "hexo theme",
+  "private": true,
   "dependencies": {
-
+    "hexo-wordcount": "^3.0.2",
+    "hexo-generator-search": "^2.2.5",
+    "eslint": "^5.5.0"
   }
 }
