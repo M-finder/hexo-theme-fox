@@ -1,4 +1,5 @@
 jQuery(document).ready(function($){
+
     "use strict";
 
     var loader = function() {
@@ -8,6 +9,18 @@ jQuery(document).ready(function($){
         });
     };
 
+    var scroll = function () {
+        $(window).on('scroll',function(){
+            // var t = document.documentElement.scrollTop || document.body.scrollTop;
+            // var top_div = document.getElementById( "top_div" );
+            // if( t >= 300 ) {
+            //     top_div.style.display = "inline";
+            // } else {
+            //     top_div.style.display = "none";
+            // }
+            console.log('xx');
+        });
+    };
     // /* Nav */
     // var Annie_Nav = function() {
     //     // browser window scroll (in pixels) after which the "menu" link is shown
@@ -74,6 +87,7 @@ jQuery(document).ready(function($){
     /* Initialize */
     (function init() {
         loader();
+        scroll();
         // Annie_Nav();
         // Annie_ToTop();
         // Annie_Toc();
