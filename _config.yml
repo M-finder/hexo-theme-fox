@@ -6,7 +6,6 @@ language: en
 menu:
   Home: /
   About: /about
-  Contact: /contact
   Archives: /archives
 
 # Miscelaneous
@@ -20,3 +19,22 @@ stylesheets:
 scripts:
 - /js/fox.js
 
+user:
+  show: true
+  links:
+    github:
+      url: https://github.com/M-finder
+      icon: icon-github
+    gitee:
+      url: https://gitee.com/M-finder
+      icon: icon-gitee
+    weibo:
+      url: https://weibo.com/p/1005053949818656/home?from=page_100505&mod=TAB&is_all=1#place
+      icon: icon-weibo1
+    rss:
+      url:
+      icon:
+wordcount: true
+article:
+  number: 5
+cover: /images/cover.jpg

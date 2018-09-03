@@ -1,18 +1,28 @@
-
 <% if (page.posts.length > 0) { %>
-  <div class="article-title recent-article">
 
-    <% page.posts.sort('date', -1).limit(10).each(function(post) { %>
-      <div class="recent-post-item">
-        <a href="<%=config.root + post.path%>">
-          <h1 class="article-title"><%=post.title%></h1>
-        </a>
-        <% if (post.date) { %>
-          <time datetime="<%=post.date.toJSON()%>">
-            <%=date(post.date)%>
-          </time>
-        <% } %>
-      </div>
+    <% page.posts.sort('date', -1).limit(theme.article.number).each(function(post) { %>
+        <div class="content-inner">
+            <div class="article-title recent-article">
+                <div class="recent-post-item">
+
+                    <a class="article-title-link" href="<%= config.root + post.path %>">
+                        <h1 class="article-title">
+                            <span class="post-info post-time" datetime="<%= post.date.toJSON() %>"><%=date(post.date)%></span>
+                            <%= post.title %>
+                        </h1>
+                        <%- image_tag(post.cover || theme.cover, {class: "am-u-sm-12"}) %>
+                    </a>
+
+
+                    <% if(post.description){ %>
+                        <div <%if(post.cover){%>class="article-description"<%}%>>
+
+                        </div>
+                    <% } %>
+
+
+                </div>
+            </div>
+        </div>
     <% }); %>
-  </div>
 <% } %>

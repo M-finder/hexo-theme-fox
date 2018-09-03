@@ -23,15 +23,15 @@ pageTitle += ' [ ' + config.title + ' ]';
     <% } %>
 </head>
 <body>
-
+<div class="loader">
+    <div class="status">
+        <img alt="loader" src="<%- url_for('/images/logo.png') %>">
+        <div class="loading">loading, please wait ...</div>
+    </div>
+</div>
 <div class="header ">
     <div class="main-container">
-        <div class="logo-container">
-            <a class="logo-link" href="<%- url_for() %>">
-                <img src="<%- url_for('/images/logo.png') %>">
-                <h2 class="web-title"><%=config.title%></h2>
-            </a>
-        </div>
+
         <div class="menu-container">
             <ul class="menu-inner">
                 <% Object.keys(theme.menu).forEach(function(key) { %>
@@ -39,21 +39,41 @@ pageTitle += ' [ ' + config.title + ' ]';
                 <% }); %>
             </ul>
         </div>
+
+        <div class="logo-container">
+            <a class="logo-link" href="<%- url_for() %>">
+                <img src="<%- url_for('/images/logo.png') %>">
+            </a>
+
+            <a href="<%-url_for()%>"><h1 class="web-title"><%=config.title%></h1></a>
+
+            <h2 class="web-subtitle"><%=config.subtitle%></h2>
+
+            <ul class="user-share-link">
+                <% if(theme.user.show === true) { %>
+                   <% for(i in theme.user.links){ %>
+                        <a href="<%= theme.user.links[i].url%>" target="_blank">
+                            <i class="fox <%= theme.user.links[i].icon %>"></i>
+                        </a>
+                   <% }%>
+                <% }; %>
+            </ul>
+        </div>
+
+
     </div>
 </div>
 
 <div class="main-container">
-    <div class="content-inner">
-        <%- body %>
-    </div>
+    <%- body %>
 </div>
 
-<div id="bottom-outer">
-    <div id="bottom-inner">
-        Site by <%= config.author %> using
-        <a href="http://hexo.io">hexo blog framework</a>.
-        <br>
-        <a href="<%= config.root %>">Home</a>
+<div class="bottom-outer">
+    <div class="bottom-inner">
+        <p>Site by <%= config.author %> using</p>
+        <p id="busuanzi_container_site_uv">欢迎您，第<span id="busuanzi_value_site_uv"></span>位访客。</p>
+        <p>Theme <a class="bottom-link" href="https://github.com/M-finder/hexo-theme-fox">fox</a> by <a class="bottom-link" href="https://www.m-finder.com">M-finder</a> | Driven Hexo.</p>
+
     </div>
 </div>
 
@@ -63,6 +83,9 @@ pageTitle += ' [ ' + config.title + ' ]';
         <script src="<%= url %>"></script>
     <% }); %>
 <% } %>
-
+<script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script>window.jQuery || document.write('<script src="<%- config.root %>js/jquery-2.1.1.min.js"><\/script>')</script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><!--文章字数统计-->
+<script src="<%- config.root %>js/main.js"></script>
 </body>
 </html>
