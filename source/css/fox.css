@@ -31,6 +31,7 @@ body a {
 }
 body a:hover {
   opacity: .7;
+  text-decoration: none;
 }
 h1 {
   font-size: 24px;
@@ -111,10 +112,10 @@ h2 {
   /*share-link*/
 }
 .header .main-container .logo-container {
-  margin: 25px auto;
+  margin: 0px auto;
 }
 .header .main-container .logo-container .logo-link {
-  display: block;
+  display: inline-block;
   overflow: hidden;
 }
 .header .main-container .logo-container .logo-link:hover {
@@ -141,7 +142,6 @@ h2 {
   overflow: hidden;
 }
 .header .main-container .menu-container .menu-inner {
-  margin: 15px auto;
   line-height: 45px;
   text-align: left;
 }
@@ -164,7 +164,7 @@ h2 {
   margin: 10px auto;
 }
 .main-container {
-  width: 800px;
+  width: 1100px;
   padding: 20px;
 }
 .content-inner {
@@ -184,6 +184,12 @@ h2 {
 }
 .recent-post-item .article-title-link .article-title:hover {
   opacity: .7;
+}
+.recent-post-item .article-cover {
+  width: 500px;
+  height: 250px;
+  background-size: cover;
+  float: left;
 }
 .recent-post-item .article-description {
   width: 300px;

@@ -34,6 +34,7 @@ body {
     text-decoration: none;
     &:hover {
       opacity: .7;
+      text-decoration:none;
     }
   }
 }
@@ -110,9 +111,9 @@ h2 {
     text-align: center;
     /* logo-container */
     .logo-container {
-      margin: 25px auto;
+      margin: 0px auto;
       .logo-link {
-        display: block;
+        display: inline-block;
         overflow: hidden;
         &:hover {
           margin-left:5px;
@@ -141,7 +142,6 @@ h2 {
     .menu-container {
       overflow: hidden;
       .menu-inner {
-        margin: 15px auto;
         line-height: 45px;
         text-align: left;
         li {
@@ -169,7 +169,7 @@ h2 {
 }
 
 .main-container {
-  width: 800px;
+  width: 1100px;
   padding: 20px;
 }
 
@@ -192,6 +192,12 @@ h2 {
         }
       }
     }
+  }
+  .article-cover{
+    width: 500px;
+    height:250px;
+    background-size: cover;
+    float: left;
   }
   .article-description{
     width: 300px;
