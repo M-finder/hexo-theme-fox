@@ -33,7 +33,7 @@ body {
   a {
     text-decoration: none;
     &:hover {
-      color: @base-color;
+      opacity: .7;
     }
   }
 }
@@ -60,37 +60,15 @@ h2 {
   color: @base-color-999 !important;
   padding: 5px;
   display: inline-block;
-  &:hover {
-    opacity: .7;
-  }
 }
 
 /* 滚动条 */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-::-webkit-scrollbar-button:vertical {
-  display: none
-}
-
-::-webkit-scrollbar-corner, ::-webkit-scrollbar-track {
-  background: @base-color-e2
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background-color: @base-color
-}
-
-::-webkit-scrollbar-thumb:vertical:hover {
-  background-color: @base-color
-}
-
-::-webkit-scrollbar-thumb:vertical:active {
-  background-color: @base-color
-}
+::-webkit-scrollbar {width: 10px;height: 10px;}
+::-webkit-scrollbar-button:vertical {display: none}
+::-webkit-scrollbar-corner, ::-webkit-scrollbar-track {background: @base-color-e2}
+::-webkit-scrollbar-thumb {border-radius: 0;background-color: @base-color}
+::-webkit-scrollbar-thumb:vertical:hover {background-color: @base-color}
+::-webkit-scrollbar-thumb:vertical:active {background-color: @base-color}
 
 /* loading */
 .loader {
@@ -137,7 +115,6 @@ h2 {
         display: block;
         overflow: hidden;
         &:hover {
-          opacity: .7;
           margin-left:5px;
         }
         img {
@@ -169,12 +146,11 @@ h2 {
         text-align: left;
         li {
           display: inline-block;
-          padding: 0 15px;
+          padding: 5px 15px;
           a {
             display: block;
             position: relative;
-            padding: 0 10px;
-
+            padding: 10px;
             &:hover {
               color: @base-color-999;
               &:after {
@@ -183,15 +159,11 @@ h2 {
             }
           }
         }
-
       }
     }
     /*share-link*/
     .user-share-link .fox{
       margin: 10px auto;
-      &:hover {
-        opacity: .7;
-      }
     }
   }
 }
@@ -203,7 +175,6 @@ h2 {
 
 .content-inner {
   border: 1px dashed @base-color;
-  padding: 20px;
   margin:25px auto;
 }
 
