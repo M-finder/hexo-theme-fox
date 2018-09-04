@@ -41,6 +41,9 @@ h2 {
   font-size: 20px;
   font-weight: normal;
 }
+.clear {
+  clear: both;
+}
 .fox {
   font-family: "fox" !important;
   font-size: 18px !important;
@@ -135,7 +138,7 @@ h2 {
   vertical-align: middle;
 }
 .header .main-container .logo-container .web-title {
-  line-height: 65px;
+  margin-top: 0;
   font-size: 32px;
   letter-spacing: 2px;
   color: #555;
