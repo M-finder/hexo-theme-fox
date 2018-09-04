@@ -19,7 +19,7 @@ background-image: linear-gradient(to right,#009688,#5FB878);
   width: 0;
   height: 2px;
   border-radius: 0;
-  background-color: #4ea7f9;
+  background-color: #337ab7;
   transition: all .3s;
   -webkit-transition: all .3s;
 }
@@ -54,8 +54,8 @@ h2 {
 }
 /* 滚动条 */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 2px;
 }
 ::-webkit-scrollbar-button:vertical {
   display: none;
@@ -66,13 +66,13 @@ h2 {
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 0;
-  background-color: #4ea7f9;
+  background-color: #337ab7;
 }
 ::-webkit-scrollbar-thumb:vertical:hover {
-  background-color: #4ea7f9;
+  background-color: #337ab7;
 }
 ::-webkit-scrollbar-thumb:vertical:active {
-  background-color: #4ea7f9;
+  background-color: #337ab7;
 }
 /* loading */
 .loader {
@@ -93,8 +93,7 @@ h2 {
   text-align: center;
   margin: -40px 0 0 -100px;
 }
-.loader .status img {
-  text-align: center;
+.loader .status .loader-logo {
   margin-top: -80px;
 }
 .loader .status .loading {
@@ -117,9 +116,17 @@ h2 {
 .header .main-container .logo-container .logo-link {
   display: inline-block;
   overflow: hidden;
+  transition: All 0.4s ease-in-out;
+  -webkit-transition: All 0.4s ease-in-out;
+  -moz-transition: All 0.4s ease-in-out;
+  -o-transition: All 0.4s ease-in-out;
 }
 .header .main-container .logo-container .logo-link:hover {
-  margin-left: 5px;
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
 }
 .header .main-container .logo-container .logo-link img {
   max-height: 65px;
@@ -168,7 +175,7 @@ h2 {
   padding: 20px;
 }
 .content-inner {
-  border: 1px dashed #4ea7f9;
+  border: 1px dashed #337ab7;
   margin: 25px auto;
 }
 .recent-post-item {
@@ -218,14 +225,14 @@ h2 {
 }
 .current {
   color: #fff;
-  background-color: #4ea7f9;
+  background-color: #337ab7;
 }
 .bottom-outer .bottom-inner {
   margin: 45px auto;
   text-align: center;
 }
 .bottom-outer .bottom-inner .bottom-link {
-  color: #4ea7f9;
+  color: #337ab7;
 }
 .bottom-outer .bottom-inner .bottom-link:hover {
   color: #999;

@@ -1,4 +1,4 @@
-@base-color: #4ea7f9;
+@base-color: #337ab7;
 @base-color-e2: #e2e2e2;
 @base-color-f2: #f2f2f2;
 @base-color-999: #999;
@@ -64,7 +64,7 @@ h2 {
 }
 
 /* 滚动条 */
-::-webkit-scrollbar {width: 10px;height: 10px;}
+::-webkit-scrollbar {width: 5px;height: 2px;}
 ::-webkit-scrollbar-button:vertical {display: none}
 ::-webkit-scrollbar-corner, ::-webkit-scrollbar-track {background: @base-color-e2}
 ::-webkit-scrollbar-thumb {border-radius: 0;background-color: @base-color}
@@ -88,8 +88,7 @@ h2 {
     background-position: center center;
     text-align: center;
     margin: -40px 0 0 -100px;
-    img {
-      text-align: center;
+    .loader-logo {
       margin-top: -80px;
     }
     .loading{
@@ -115,8 +114,16 @@ h2 {
       .logo-link {
         display: inline-block;
         overflow: hidden;
+        transition: All 0.4s ease-in-out;
+        -webkit-transition: All 0.4s ease-in-out;
+        -moz-transition: All 0.4s ease-in-out;
+        -o-transition: All 0.4s ease-in-out;
         &:hover {
-          margin-left:5px;
+          transform: rotate(360deg);
+          -webkit-transform: rotate(360deg);
+          -moz-transform: rotate(360deg);
+          -o-transform: rotate(360deg);
+          -ms-transform: rotate(360deg);
         }
         img {
           max-height: 65px;
