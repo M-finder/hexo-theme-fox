@@ -1,18 +1,28 @@
 <% if (page.posts.length > 0) { %>
 
     <% page.posts.sort('date', -1).limit(theme.article.number).each(function(post) { %>
-        <div class="content-inner">
-            <div class="article-title recent-article">
+        <div class="col-md-8 col-sm-12 col-xs-12 content-inner col-md-offset-2">
+            <div class="col-md-6 article-cover"  style="background-image: url('<%=post.cover || theme.article.cover%>')"></div>
+
+            <div class="col-md-6 " >
                 <div class="recent-post-item">
-                    <div class="article-cover" style="background-image: url('<%=post.cover || theme.cover%>')"></div>
                     <a class="article-title-link" href="<%= config.root + post.path %>">
                         <h1 class="article-title">
-                            <span class="post-info post-time" datetime="<%= post.date.toJSON() %>"><%=date(post.date)%></span>
+                            <time class="post-info post-time" datetime="<%= post.date.toJSON() %>"><%=date(post.date)%></time>
                             <%= post.title %>
                         </h1>
                     </a>
+                    <div class="article-description">
+                        <%= strip_html(post.description).substring(0, theme.article.length) || strip_html(post.content).substring(0, theme.article.length); %>...
+                    </div>
+                    <div class="read-more">
+                        <a href="<%= config.root + post.path %>" class="read-more-link"> read more</a>
+                        <hr class="hidden-md  hidden-lg visible-xs-block visible-sm-block ">
+                    </div>
                 </div>
+
             </div>
         </div>
     <% }); %>
+    <div class="clear"></div>
 <% } %>

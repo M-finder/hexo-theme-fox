@@ -42,4 +42,5 @@ user:
 wordcount: true
 article:
   number: 5
-cover: /images/cover.jpg
+  cover: /images/cover.jpg
+  length: 100
