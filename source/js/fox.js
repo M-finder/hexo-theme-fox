@@ -11,14 +11,9 @@ jQuery(document).ready(function($){
 
     var scroll = function () {
         $(window).on('scroll',function(){
-            // var t = document.documentElement.scrollTop || document.body.scrollTop;
-            // var top_div = document.getElementById( "top_div" );
-            // if( t >= 300 ) {
-            //     top_div.style.display = "inline";
-            // } else {
-            //     top_div.style.display = "none";
-            // }
-            console.log('xx');
+            var height = document.documentElement.scrollTop || document.body.scrollTop;
+            var opcaity=(height/300>1)?1:height/300;
+            $('.header').css('background','rgba(255,255,255,'+opcaity+')');
         });
     };
     // /* Nav */

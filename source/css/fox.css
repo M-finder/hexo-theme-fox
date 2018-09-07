@@ -109,44 +109,9 @@ h2 {
 .header .main-container {
   padding: 0;
   text-align: center;
-  /* logo-container */
+  margin-top: 0;
   /* menu-container */
   /*share-link*/
-}
-.header .main-container .logo-container {
-  margin: 0px auto;
-}
-.header .main-container .logo-container .logo-link {
-  display: inline-block;
-  overflow: hidden;
-  transition: All 0.4s ease-in-out;
-  -webkit-transition: All 0.4s ease-in-out;
-  -moz-transition: All 0.4s ease-in-out;
-  -o-transition: All 0.4s ease-in-out;
-}
-.header .main-container .logo-container .logo-link:hover {
-  transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-}
-.header .main-container .logo-container .logo-link img {
-  max-height: 65px;
-  max-width: 120px;
-  width: auto;
-  vertical-align: middle;
-}
-.header .main-container .logo-container .web-title {
-  margin-top: 0;
-  font-size: 32px;
-  letter-spacing: 2px;
-  color: #555;
-}
-.header .main-container .logo-container .web-subtitle {
-  font-size: 14px;
-  font-weight: normal;
-  color: #999;
 }
 .header .main-container .menu-container {
   overflow: hidden;
@@ -172,6 +137,60 @@ h2 {
 }
 .header .main-container .user-share-link .fox {
   margin: 10px auto;
+}
+.header-logo-container {
+  padding: 0;
+  text-align: center;
+  margin-top: 0;
+  /* logo-container */
+}
+.header-logo-container .main-container {
+  margin-top: 60px;
+}
+.header-logo-container .logo-container {
+  margin: 0px auto;
+}
+.header-logo-container .logo-container .logo-link {
+  display: inline-block;
+  overflow: hidden;
+  transition: All 0.4s ease-in-out;
+  -webkit-transition: All 0.4s ease-in-out;
+  -moz-transition: All 0.4s ease-in-out;
+  -o-transition: All 0.4s ease-in-out;
+}
+.header-logo-container .logo-container .logo-link:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+}
+.header-logo-container .logo-container .logo-link img {
+  max-height: 65px;
+  max-width: 120px;
+  width: auto;
+  vertical-align: middle;
+}
+.header-logo-container .logo-container .web-title {
+  margin-top: 0;
+  font-size: 32px;
+  letter-spacing: 2px;
+  color: #555;
+}
+.header-logo-container .logo-container .web-subtitle {
+  font-size: 14px;
+  font-weight: normal;
+  color: #999;
+}
+.fixed-header {
+  position: fixed;
+  top: 0;
+  height: 65px;
+  z-index: 1027;
+}
+.row {
+  display: block;
+  overflow: hidden;
 }
 .main-container {
   width: 1100px;
