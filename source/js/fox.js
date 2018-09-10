@@ -16,6 +16,13 @@ jQuery(document).ready(function($){
             $('.header').css('background','rgba(255,255,255,'+opcaity+')');
         });
     };
+
+    var hashchange = function (){
+        $(window).on('hashchange',function(){
+            var target = $(decodeURI(location.hash)),top = target.offset().top-65;
+            $('html,body').animate({scrollTop:top}, 500);
+        });
+    };
     // /* Nav */
     // var Annie_Nav = function() {
     //     // browser window scroll (in pixels) after which the "menu" link is shown
@@ -83,6 +90,7 @@ jQuery(document).ready(function($){
     (function init() {
         loader();
         scroll();
+        hashchange();
         // Annie_Nav();
         // Annie_ToTop();
         // Annie_Toc();

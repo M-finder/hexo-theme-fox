@@ -3,7 +3,7 @@
         <h1 class="article-title">
             <%= page.title %>
         </h1>
-       <%- toc(page.content) %>
+
         <div class="post-info-box">
             <time class="post-info post-time" datetime="<%= page.date.toJSON() %>"><%= __('created_at') %>：<%= date(page.date) %></time>
             <% if(theme.wordcount === true){ %>
@@ -13,6 +13,10 @@
         </div>
 
         <%- page.content %>
+    </div>
+    <div class="post-page-title">
+        <div class="progress-title">You've read <span class="read-point">0</span>%</div>
+        <%- toc(page.content) %>
     </div>
 </article>
 <%- paginator() %>

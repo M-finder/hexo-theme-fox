@@ -27,7 +27,7 @@
 }
 
 body {
-  background: @base-color-fc;
+  background: @base-color-f2;
   a {
     text-decoration: none;
     &:hover {
@@ -102,7 +102,7 @@ h2 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: @base-color-fc;
+  background-color: @base-color-f2;
   z-index: 999999;
   .status {
     position: absolute;
@@ -161,11 +161,11 @@ h2 {
 }
 
 .header-logo-container {
-  padding: 0;
+  padding-top: 0;
   text-align: center;
-  margin-top: 0;
+  margin-top:65px;
   .main-container {
-    margin-top: 60px;
+
   }
   /* logo-container */
   .logo-container {
@@ -225,7 +225,7 @@ h2 {
 .content-inner {
   margin-top: 25px;
   padding:0;
-  background:@base-color-f2;
+  background:@base-color-fc;
   transition: All 0.4s ease-in-out;
   -webkit-transition: All 0.4s ease-in-out;
   -moz-transition: All 0.4s ease-in-out;
@@ -248,9 +248,15 @@ h2 {
     min-height: 250px;
     padding:0;
     height: auto;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: no-repeat center;
+    background-size: 110%;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    &:hover{
+      background-size: 100%;
+    }
   }
 }
 
@@ -343,13 +349,40 @@ h2 {
   }
 }
 .article-detail{
+  display: block;
+  overflow: hidden;
   .content-inner{
+    padding:25px;
    &:hover{
      &:after{
        display: none;
      }
    }
   }
+
+  /* 左侧标题列表 */
+  .post-page-title{
+    max-width: 300px;
+    height:100vh;
+    position: fixed;
+    left: 0;
+    top:0;
+    z-index: 10270919;
+    padding: 25px;
+    margin-top: 65px;
+    .progress-title{
+      color: #41b883;
+      .read-point{
+        color: @base-color;
+        margin-left:15px;
+      }
+    }
+    .toc{
+      li{
+        list-style: none;
+      }
+    }
+ }
 }
 
 /* 高亮*/

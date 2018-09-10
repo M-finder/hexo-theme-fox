@@ -21,7 +21,7 @@
   -webkit-transition: all .3s;
 }
 body {
-  background: #fcfcfc;
+  background: #f2f2f2;
 }
 body a {
   text-decoration: none;
@@ -84,7 +84,7 @@ h2 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #fcfcfc;
+  background-color: #f2f2f2;
   z-index: 999999;
 }
 .loader .status {
@@ -139,13 +139,10 @@ h2 {
   margin: 10px auto;
 }
 .header-logo-container {
-  padding: 0;
+  padding-top: 0;
   text-align: center;
-  margin-top: 0;
+  margin-top: 65px;
   /* logo-container */
-}
-.header-logo-container .main-container {
-  margin-top: 60px;
 }
 .header-logo-container .logo-container {
   margin: 0px auto;
@@ -198,7 +195,7 @@ h2 {
 .content-inner {
   margin-top: 25px;
   padding: 0;
-  background: #f2f2f2;
+  background: #fcfcfc;
   transition: All 0.4s ease-in-out;
   -webkit-transition: All 0.4s ease-in-out;
   -moz-transition: All 0.4s ease-in-out;
@@ -220,9 +217,15 @@ h2 {
   min-height: 250px;
   padding: 0;
   height: auto;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: no-repeat center;
+  background-size: 110%;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+.content-inner .article-cover:hover {
+  background-size: 100%;
 }
 .recent-post-item {
   overflow: hidden;
@@ -303,8 +306,36 @@ h2 {
 .bottom-outer .bottom-inner .bottom-link:hover {
   color: #999;
 }
+.article-detail {
+  display: block;
+  overflow: hidden;
+  /* 左侧标题列表 */
+}
+.article-detail .content-inner {
+  padding: 25px;
+}
 .article-detail .content-inner:hover:after {
   display: none;
+}
+.article-detail .post-page-title {
+  max-width: 300px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10270919;
+  padding: 25px;
+  margin-top: 65px;
+}
+.article-detail .post-page-title .progress-title {
+  color: #41b883;
+}
+.article-detail .post-page-title .progress-title .read-point {
+  color: #337ab7;
+  margin-left: 15px;
+}
+.article-detail .post-page-title .toc li {
+  list-style: none;
 }
 /* 高亮*/
 .article-detail pre,
