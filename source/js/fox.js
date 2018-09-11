@@ -14,14 +14,30 @@ jQuery(document).ready(function($){
             var height = document.documentElement.scrollTop || document.body.scrollTop;
             var opcaity=(height/300>1)?1:height/300;
             $('.header').css('background','rgba(255,255,255,'+opcaity+')');
+            progress();
         });
     };
 
+    /* 文章toc 点击错位解决 */
     var hashchange = function (){
         $(window).on('hashchange',function(){
             var target = $(decodeURI(location.hash)),top = target.offset().top-65;
             $('html,body').animate({scrollTop:top}, 500);
         });
+    };
+
+    var progress = function (){
+        /* 如果文章模块高度大于屏幕高度，则取差，否则取页面整体高度剪掉屏幕高度*/
+        var docHeight = $('.article-detail').height(),
+            winHeight = $(window).height(),
+            contentMath = (docHeight > winHeight) ? (docHeight - winHeight) : ($(document).height() - winHeight),
+            scrollPercent = ($(document).scrollTop()) / (contentMath),
+            scrollPercentRounded = Math.round(scrollPercent * 100),
+            percentage = (scrollPercentRounded > 100) ? 100 : scrollPercentRounded;
+
+        console.log(percentage)
+        $('.read-point').text(percentage)
+        $('.progress-title').css('width');
     };
     // /* Nav */
     // var Annie_Nav = function() {
@@ -91,6 +107,7 @@ jQuery(document).ready(function($){
         loader();
         scroll();
         hashchange();
+        progress();
         // Annie_Nav();
         // Annie_ToTop();
         // Annie_Toc();

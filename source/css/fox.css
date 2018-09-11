@@ -311,6 +311,19 @@ h2 {
   overflow: hidden;
   /* 左侧标题列表 */
 }
+.article-detail h1,
+.article-detail h2,
+.article-detail h3,
+.article-detail h4,
+.article-detail h5,
+.article-detail h6 {
+  font-weight: bold;
+}
+.article-detail h5,
+.article-detail h6 {
+  color: #999;
+  font-size: 14px;
+}
 .article-detail .content-inner {
   padding: 25px;
 }
@@ -350,6 +363,7 @@ h2 {
   word-break: normal;
   margin: 0px;
   color: #333333;
+  line-height: 24px;
 }
 .article-detail .highlight .gutter pre,
 .article-detail .gist .gist-file .gist-data .line-numbers {
