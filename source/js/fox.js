@@ -23,11 +23,12 @@ jQuery(document).ready(function($){
         $(window).on('hashchange',function(){
             var target = $(decodeURI(location.hash)),top = target.offset().top-65;
             $('html,body').animate({scrollTop:top}, 500);
+            $('.toc-link[href="'+decodeURI(location.hash)+'"]').addClass('active')
+            $('.toc-link[href!="'+decodeURI(location.hash)+'"]').removeClass('active');
         });
     };
 
     var progress = function (){
-        /* 如果文章模块高度大于屏幕高度，则取差，否则取页面整体高度剪掉屏幕高度*/
         var docHeight = $('.article-detail').height(),
             winHeight = $(window).height(),
             contentMath = (docHeight > winHeight) ? (docHeight - winHeight) : ($(document).height() - winHeight),
@@ -35,7 +36,6 @@ jQuery(document).ready(function($){
             scrollPercentRounded = Math.round(scrollPercent * 100),
             percentage = (scrollPercentRounded > 100) ? 100 : scrollPercentRounded;
 
-        console.log(percentage)
         $('.read-point').text(percentage)
         $('.progress-title').css('width');
     };

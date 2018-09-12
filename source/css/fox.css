@@ -347,8 +347,13 @@ h2 {
   color: #337ab7;
   margin-left: 15px;
 }
-.article-detail .post-page-title .toc li {
+.article-detail .post-page-title .toc li,
+.article-detail .post-page-title .toc-child li {
   list-style: none;
+}
+.article-detail .post-page-title .toc .active,
+.article-detail .post-page-title .toc-child .active {
+  background: #337ab7;
 }
 /* 高亮*/
 .article-detail pre,
