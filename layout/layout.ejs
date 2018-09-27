@@ -33,7 +33,7 @@ if (is_home()) pageTitle += ' - ' + config.title;
 </div>
 
 <div class="container-fluid">
-    <div class="row">
+    <div class="row top-header" <% if(theme.banner){ %>style="background-image:url(<%- theme.banner %>)"<% }%>>
         <div class="header fixed-header col-md-12 hidden-sm hidden-xs visible-md-block visible-lg-block ">
             <div class="main-container col-md-offset-2">
                 <div class="menu-container ">
@@ -82,13 +82,18 @@ if (is_home()) pageTitle += ' - ' + config.title;
         <div class="bottom-inner">
             <p>Site by <%= config.author %> using</p>
             <p id="busuanzi_container_site_uv">欢迎您，第<span id="busuanzi_value_site_uv"></span>位访客。</p>
-            <p>Theme <a class="bottom-link" href="https://github.com/M-finder/hexo-theme-fox">fox</a> by <a
-                        class="bottom-link" href="https://www.m-finder.com">M-finder</a> | Driven Hexo.</p>
+            <p>Theme <a class="bottom-link" href="https://github.com/M-finder/hexo-theme-fox">Fox</a>
+                by
+                <a class="bottom-link" href="https://www.m-finder.com">M-finder</a>
+                <i class="fox icon-zan1 footer-heart"></i>
+                | Driven Hexo.</p>
 
         </div>
     </div>
 </div>
-
+<div id="go-up">
+    <a href="javascript:;"><i class="fox icon-shangfan"></i></a>
+</div>
 <% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
     <!-- scripts list from theme config.yml -->
     <% theme.scripts.forEach(function(url) { %>

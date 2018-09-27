@@ -3,6 +3,7 @@
 @base-color-f2: #f2f2f2;
 @base-color-fc: #fcfcfc;
 @base-color-999: #999;
+@base-color-41: #41b883;
 
 * {
   margin: 0 auto;
@@ -20,7 +21,7 @@
     width: 0;
     height: 2px;
     border-radius: 0;
-    background-color: @base-color;
+    background-color: @base-color-41;
     transition: all .3s;
     -webkit-transition: all .3s;
   }
@@ -30,8 +31,8 @@ body {
   background: @base-color-f2;
   a {
     text-decoration: none;
+    color: @base-color-41;
     &:hover {
-      opacity: .7;
       text-decoration: none;
     }
   }
@@ -51,7 +52,7 @@ h2 {
   clear: both;
 }
 
-@import "//at.alicdn.com/t/font_817120_fy1i3nw754s.css";
+@import "//at.alicdn.com/t/font_817120_bnje11fbkqk.css";
 
 .fox {
   font-family: "fox" !important;
@@ -119,13 +120,17 @@ h2 {
       margin-top: 20px;
       font-size: 24px;
       text-align: center;
-      color: #41b883;
+      color: @base-color-41;
     }
   }
 }
 
 /* header 菜单样式 */
+.top-header{
+  background-size: cover;
+}
 .header {
+  background-color: rgba(255,255,255,.2);
   .main-container {
     padding: 0;
     text-align: center;
@@ -144,7 +149,7 @@ h2 {
             position: relative;
             padding: 10px;
             &:hover {
-              color: @base-color-999;
+              color: @base-color-41;
               &:after {
                 width: 100%;
               }
@@ -195,7 +200,7 @@ h2 {
       margin-top: 0;
       font-size: 32px;
       letter-spacing: 2px;
-      color: #555;
+      color: @base-color-999
     }
     .web-subtitle {
       font-size: 14px;
@@ -223,6 +228,7 @@ h2 {
 }
 
 .content-inner {
+  border: 1px dashed #cecece;
   margin-top: 25px;
   padding:0;
   transition: All 0.4s ease-in-out;
@@ -246,7 +252,6 @@ h2 {
     }
   }
   .article-cover {
-    border:1px solid @base-color-fc;
     min-height: 250px;
     padding:0;
     height: auto;
@@ -261,7 +266,7 @@ h2 {
     }
   }
   .border-box{
-    border: 1px dashed #cecece;
+
     border-left: none;
   }
 }
@@ -300,21 +305,37 @@ h2 {
     display: inline-block;
   }
 
+
   .read-more {
     margin: 20px auto;
+    position: absolute;
+    bottom: 0;
+    right: 15px;
     hr {
       border-color: @base-color;
     }
     .read-more-link {
-      padding: 5px 10px;
+      padding: 10px 15px;
       border: 1px dashed @base-color;
+      transition: All 0.4s ease-in-out;
+      -webkit-transition: All 0.4s ease-in-out;
+      -moz-transition: All 0.4s ease-in-out;
+      -o-transition: All 0.4s ease-in-out;
       &:hover {
         border-style: solid;
+        border-radius: 20px;
       }
     }
   }
 }
-
+@media screen and (max-width: 992px) {
+  .content-inner{
+    border:none;
+  }
+  .recent-post-item .read-more{
+    position: initial;
+  }
+}
 .post-info {
   margin: 10px 20px 10px 0;
   color: @base-color-999;
@@ -357,6 +378,12 @@ h2 {
 .article-detail{
   display: block;
   overflow: hidden;
+  a{
+    color:@base-color;
+    &:hover{
+      color:@base-color-41;
+    }
+  }
   h1,h2,h3,h4,h5,h6{
     font-weight: bold;
     position: relative;
@@ -364,7 +391,7 @@ h2 {
       &:before{
         content:"#";
         position: absolute;
-        left: -15px;
+        left: -20px;
       }
     }
   }
@@ -390,7 +417,8 @@ h2 {
     top:0;
     z-index: 1027;
     padding: 25px;
-    padding-top: 145px;
+    padding-top: 200px;
+    display: none;
     .progress-title{
       color: #41b883;
       position: relative;
@@ -407,24 +435,41 @@ h2 {
         margin-left:15px;
       }
     }
-    .toc,.toc-child{
-      li{
-        list-style: none;
-        .toc-link{
-          padding: 5px 10px;
-          display: block;
-        }
-      }
-      .active{
-        background: @base-color;
-        .toc-text,.toc-number{
-          color:#ffffff;
-        }
+    .toc-item{
+      list-style: none;
+    }
+    .toc-link{
+      padding: 5px 10px;
+      display: block;
+    }
+    .active{
+      background: @base-color;
+      .toc-text,.toc-number{
+        color:#ffffff;
       }
     }
  }
 }
 
+
+.footer-heart{
+  color: pink!important;
+}
+#go-up{
+  position: fixed;
+  bottom: 100px;
+  right:45px;
+  width:45px;
+  height:45px;
+  background:@base-color-41;
+  line-height: 45px;
+  text-align: center;
+  display: none;
+  i{
+    font-weight: bold;
+    color: #ffffff!important;
+  }
+}
 /* 高亮*/
 .article-detail pre, .article-detail .highlight {
   display: block;

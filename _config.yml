@@ -44,3 +44,5 @@ article:
   number: 5
   cover: /images/cover.jpg
   length: 100
+banner:
+- /images/banner.jpg #宽高：1600*600

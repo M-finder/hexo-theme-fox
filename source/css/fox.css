@@ -1,4 +1,4 @@
-@import "//at.alicdn.com/t/font_817120_fy1i3nw754s.css";
+@import "//at.alicdn.com/t/font_817120_bnje11fbkqk.css";
 * {
   margin: 0 auto;
   padding: 0;
@@ -16,7 +16,7 @@
   width: 0;
   height: 2px;
   border-radius: 0;
-  background-color: #337ab7;
+  background-color: #41b883;
   transition: all .3s;
   -webkit-transition: all .3s;
 }
@@ -25,9 +25,9 @@ body {
 }
 body a {
   text-decoration: none;
+  color: #41b883;
 }
 body a:hover {
-  opacity: .7;
   text-decoration: none;
 }
 h1 {
@@ -106,6 +106,12 @@ h2 {
   color: #41b883;
 }
 /* header 菜单样式 */
+.top-header {
+  background-size: cover;
+}
+.header {
+  background-color: rgba(255, 255, 255, 0.2);
+}
 .header .main-container {
   padding: 0;
   text-align: center;
@@ -130,7 +136,7 @@ h2 {
   padding: 10px;
 }
 .header .main-container .menu-container .menu-inner li a:hover {
-  color: #999;
+  color: #41b883;
 }
 .header .main-container .menu-container .menu-inner li a:hover:after {
   width: 100%;
@@ -172,7 +178,7 @@ h2 {
   margin-top: 0;
   font-size: 32px;
   letter-spacing: 2px;
-  color: #555;
+  color: #999;
 }
 .header-logo-container .logo-container .web-subtitle {
   font-size: 14px;
@@ -193,6 +199,7 @@ h2 {
   padding: 20px;
 }
 .content-inner {
+  border: 1px dashed #cecece;
   margin-top: 25px;
   padding: 0;
   transition: All 0.4s ease-in-out;
@@ -215,7 +222,6 @@ h2 {
   border-color: #337ab7;
 }
 .content-inner .article-cover {
-  border: 1px solid #fcfcfc;
   min-height: 250px;
   padding: 0;
   height: auto;
@@ -230,7 +236,6 @@ h2 {
   background-size: 100%;
 }
 .content-inner .border-box {
-  border: 1px dashed #cecece;
   border-left: none;
 }
 .recent-post-item {
@@ -263,16 +268,32 @@ h2 {
 }
 .recent-post-item .read-more {
   margin: 20px auto;
+  position: absolute;
+  bottom: 0;
+  right: 15px;
 }
 .recent-post-item .read-more hr {
   border-color: #337ab7;
 }
 .recent-post-item .read-more .read-more-link {
-  padding: 5px 10px;
+  padding: 10px 15px;
   border: 1px dashed #337ab7;
+  transition: All 0.4s ease-in-out;
+  -webkit-transition: All 0.4s ease-in-out;
+  -moz-transition: All 0.4s ease-in-out;
+  -o-transition: All 0.4s ease-in-out;
 }
 .recent-post-item .read-more .read-more-link:hover {
   border-style: solid;
+  border-radius: 20px;
+}
+@media screen and (max-width: 992px) {
+  .content-inner {
+    border: none;
+  }
+  .recent-post-item .read-more {
+    position: initial;
+  }
 }
 .post-info {
   margin: 10px 20px 10px 0;
@@ -317,6 +338,12 @@ h2 {
   overflow: hidden;
   /* 左侧标题列表 */
 }
+.article-detail a {
+  color: #337ab7;
+}
+.article-detail a:hover {
+  color: #41b883;
+}
 .article-detail h1,
 .article-detail h2,
 .article-detail h3,
@@ -334,7 +361,7 @@ h2 {
 .article-detail h6:hover:before {
   content: "#";
   position: absolute;
-  left: -15px;
+  left: -20px;
 }
 .article-detail h5,
 .article-detail h6 {
@@ -355,7 +382,8 @@ h2 {
   top: 0;
   z-index: 1027;
   padding: 25px;
-  padding-top: 145px;
+  padding-top: 200px;
+  display: none;
 }
 .article-detail .post-page-title .progress-title {
   color: #41b883;
@@ -373,24 +401,37 @@ h2 {
   color: #337ab7;
   margin-left: 15px;
 }
-.article-detail .post-page-title .toc li,
-.article-detail .post-page-title .toc-child li {
+.article-detail .post-page-title .toc-item {
   list-style: none;
 }
-.article-detail .post-page-title .toc li .toc-link,
-.article-detail .post-page-title .toc-child li .toc-link {
+.article-detail .post-page-title .toc-link {
   padding: 5px 10px;
   display: block;
 }
-.article-detail .post-page-title .toc .active,
-.article-detail .post-page-title .toc-child .active {
+.article-detail .post-page-title .active {
   background: #337ab7;
 }
-.article-detail .post-page-title .toc .active .toc-text,
-.article-detail .post-page-title .toc-child .active .toc-text,
-.article-detail .post-page-title .toc .active .toc-number,
-.article-detail .post-page-title .toc-child .active .toc-number {
+.article-detail .post-page-title .active .toc-text,
+.article-detail .post-page-title .active .toc-number {
   color: #ffffff;
+}
+.footer-heart {
+  color: pink!important;
+}
+#go-up {
+  position: fixed;
+  bottom: 100px;
+  right: 45px;
+  width: 45px;
+  height: 45px;
+  background: #41b883;
+  line-height: 45px;
+  text-align: center;
+  display: none;
+}
+#go-up i {
+  font-weight: bold;
+  color: #ffffff!important;
 }
 /* 高亮*/
 .article-detail pre,
