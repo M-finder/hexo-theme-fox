@@ -359,6 +359,14 @@ h2 {
   overflow: hidden;
   h1,h2,h3,h4,h5,h6{
     font-weight: bold;
+    position: relative;
+    &:hover{
+      &:before{
+        content:"#";
+        position: absolute;
+        left: -15px;
+      }
+    }
   }
   h5,h6{
     color: @base-color-999;
@@ -382,9 +390,18 @@ h2 {
     top:0;
     z-index: 1027;
     padding: 25px;
-    margin-top: 65px;
+    padding-top: 145px;
     .progress-title{
       color: #41b883;
+      position: relative;
+      margin-bottom:25px;
+      .progress{
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        height: 1px;
+        background: #41b883;
+      }
       .read-point{
         color: @base-color;
         margin-left:15px;
@@ -393,9 +410,16 @@ h2 {
     .toc,.toc-child{
       li{
         list-style: none;
+        .toc-link{
+          padding: 5px 10px;
+          display: block;
+        }
       }
       .active{
         background: @base-color;
+        .toc-text,.toc-number{
+          color:#ffffff;
+        }
       }
     }
  }
@@ -407,7 +431,7 @@ h2 {
   padding: 10px 16px;
   margin: 0 0 24px;
   border-left: 3px solid @base-color;
-  background: @base-color-f2;
+  background: @base-color-fc;
   overflow: auto;
   word-wrap: normal;
   word-break: normal;

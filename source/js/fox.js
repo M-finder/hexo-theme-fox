@@ -9,11 +9,14 @@ jQuery(document).ready(function($){
         });
     };
 
+    /* 滚动条 */
     var scroll = function () {
         $(window).on('scroll',function(){
+            /* 顶部菜单样式切换 */
             var height = document.documentElement.scrollTop || document.body.scrollTop;
             var opcaity=(height/300>1)?1:height/300;
             $('.header').css('background','rgba(255,255,255,'+opcaity+')');
+            /* 文章阅读进度 */
             progress();
         });
     };
@@ -37,7 +40,7 @@ jQuery(document).ready(function($){
             percentage = (scrollPercentRounded > 100) ? 100 : scrollPercentRounded;
 
         $('.read-point').text(percentage)
-        $('.progress-title').css('width');
+        $('.progress-title .progress').css('width',percentage+'%');
     };
     // /* Nav */
     // var Annie_Nav = function() {

@@ -324,6 +324,17 @@ h2 {
 .article-detail h5,
 .article-detail h6 {
   font-weight: bold;
+  position: relative;
+}
+.article-detail h1:hover:before,
+.article-detail h2:hover:before,
+.article-detail h3:hover:before,
+.article-detail h4:hover:before,
+.article-detail h5:hover:before,
+.article-detail h6:hover:before {
+  content: "#";
+  position: absolute;
+  left: -15px;
 }
 .article-detail h5,
 .article-detail h6 {
@@ -344,10 +355,19 @@ h2 {
   top: 0;
   z-index: 1027;
   padding: 25px;
-  margin-top: 65px;
+  padding-top: 145px;
 }
 .article-detail .post-page-title .progress-title {
   color: #41b883;
+  position: relative;
+  margin-bottom: 25px;
+}
+.article-detail .post-page-title .progress-title .progress {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  height: 1px;
+  background: #41b883;
 }
 .article-detail .post-page-title .progress-title .read-point {
   color: #337ab7;
@@ -357,9 +377,20 @@ h2 {
 .article-detail .post-page-title .toc-child li {
   list-style: none;
 }
+.article-detail .post-page-title .toc li .toc-link,
+.article-detail .post-page-title .toc-child li .toc-link {
+  padding: 5px 10px;
+  display: block;
+}
 .article-detail .post-page-title .toc .active,
 .article-detail .post-page-title .toc-child .active {
   background: #337ab7;
+}
+.article-detail .post-page-title .toc .active .toc-text,
+.article-detail .post-page-title .toc-child .active .toc-text,
+.article-detail .post-page-title .toc .active .toc-number,
+.article-detail .post-page-title .toc-child .active .toc-number {
+  color: #ffffff;
 }
 /* 高亮*/
 .article-detail pre,
@@ -368,7 +399,7 @@ h2 {
   padding: 10px 16px;
   margin: 0 0 24px;
   border-left: 3px solid #337ab7;
-  background: #f2f2f2;
+  background: #fcfcfc;
   overflow: auto;
   word-wrap: normal;
   word-break: normal;
