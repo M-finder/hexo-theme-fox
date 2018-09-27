@@ -277,7 +277,7 @@ h2 {
 }
 .recent-post-item .read-more .read-more-link {
   padding: 10px 15px;
-  border: 1px dashed #337ab7;
+  border: 1px dashed #41b883;
   transition: All 0.4s ease-in-out;
   -webkit-transition: All 0.4s ease-in-out;
   -moz-transition: All 0.4s ease-in-out;
@@ -286,6 +286,8 @@ h2 {
 .recent-post-item .read-more .read-more-link:hover {
   border-style: solid;
   border-radius: 20px;
+  background: #337ab7;
+  color: #ffffff;
 }
 @media screen and (max-width: 992px) {
   .content-inner {

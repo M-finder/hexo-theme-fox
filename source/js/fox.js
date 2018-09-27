@@ -21,17 +21,16 @@ jQuery(document).ready(function($){
             /* 滚动条高度判断 是否显示文章目录和go-up */
             if (currentTop > staticHeight) {
                 $('#go-up').fadeIn();
-                $('.post-page-title').show();
+                $('.post-page-title').fadeIn();
             }else{
                 $('#go-up').fadeOut();
-                $('.post-page-title').hide();
+                $('.post-page-title').fadeOut();
             }
 
         });
     }
 
     $('#go-up').on('click', function () {
-        console.log('go');
         $('html,body').animate({scrollTop:0}, 500);
     });
 
