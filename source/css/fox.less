@@ -225,26 +225,28 @@ h2 {
 .content-inner {
   margin-top: 25px;
   padding:0;
-  background:@base-color-fc;
   transition: All 0.4s ease-in-out;
   -webkit-transition: All 0.4s ease-in-out;
   -moz-transition: All 0.4s ease-in-out;
   -o-transition: All 0.4s ease-in-out;
   &:after {
     bottom: 0;
-    left: 0;
+    left: -10px;
     width: 2px;
     height: 0;
     background-color: @base-color;
   }
   &:hover {
     &:after {
-      opacity: .2;
       background-image: linear-gradient(to top, #009688, #5FB878);
       height: 100%;
     }
+    .border-box{
+      border-color: @base-color;
+    }
   }
   .article-cover {
+    border:1px solid @base-color-fc;
     min-height: 250px;
     padding:0;
     height: auto;
@@ -257,6 +259,10 @@ h2 {
     &:hover{
       background-size: 100%;
     }
+  }
+  .border-box{
+    border: 1px dashed #cecece;
+    border-left: none;
   }
 }
 
@@ -374,7 +380,7 @@ h2 {
     position: fixed;
     left: 0;
     top:0;
-    z-index: 10270919;
+    z-index: 1027;
     padding: 25px;
     margin-top: 65px;
     .progress-title{
