@@ -134,7 +134,7 @@ h2 {
   display: block;
   position: relative;
   padding: 10px;
-  font-weight: bold;
+  font-weight: 500;
 }
 .header .main-container .menu-container .menu-inner li a:hover {
   color: #41b883;
@@ -340,6 +340,9 @@ h2 {
   display: block;
   overflow: hidden;
   /* 左侧标题列表 */
+}
+.article-detail .content-inner {
+  border: none;
 }
 .article-detail a {
   color: #337ab7;

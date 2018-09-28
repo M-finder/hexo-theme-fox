@@ -28,13 +28,22 @@ jQuery(document).ready(function ($) {
                     });
                 }
 
-                $('.post-page-title').fadeIn();
+                if($('.post-page-title').css('opacity')==='0'){
+                    $('.post-page-title').velocity('stop').velocity({left: '20px', opacity: 1}, {
+                        easing: 'easeOutQuart',
+                        duration: 500
+                    });
+                }
+
             } else {
                 $('#go-up').velocity('stop').velocity({translateX: 0, rotateZ: 180, opacity: 0}, {
                     easing: 'easeOutQuart',
                     duration: 200
                 });
-                $('.post-page-title').fadeOut();
+                $('.post-page-title').velocity('stop').velocity({left:'-200px', opacity: 0}, {
+                    easing: 'easeOutQuart',
+                    duration: 500
+                });
             }
 
         });
