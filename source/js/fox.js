@@ -1,11 +1,11 @@
-jQuery(document).ready(function($){
+jQuery(document).ready(function ($) {
 
     "use strict";
 
-    var initTop = 0,staticHeight = 65;
+    var initTop = 0, staticHeight = 65;
 
-    var loader = function() {
-        $(window).on("load", function() {
+    var loader = function () {
+        $(window).on("load", function () {
             $(".status").fadeOut();
             $(".loader").delay(400).fadeOut("slow");
         });
@@ -13,17 +13,27 @@ jQuery(document).ready(function($){
 
     /* 滚动条 */
     var scroll = function () {
-        $(window).scroll(function (){
+        $(window).scroll(function () {
             var currentTop = $(this).scrollTop();
-            var opcaity = (currentTop/250>1) ? 1:currentTop/250 <=0 ? .2 : currentTop/250;
-            $('.header').css('background','rgba(255,255,255,'+opcaity+')');
+            var opcaity = (currentTop / 250 > 1) ? 1 : currentTop / 250 <= 0 ? .2 : currentTop / 250;
+            $('.header').css('background', 'rgba(255,255,255,' + opcaity + ')');
 
             /* 滚动条高度判断 是否显示文章目录和go-up */
             if (currentTop > staticHeight) {
-                $('#go-up').fadeIn();
+                // $('#go-up').fadeIn();
+                if ($('#go-up').css('opacity') === '0') {
+                    $('#go-up').velocity('stop').velocity({translateX: -30, rotateZ: 360, opacity: 1}, {
+                        easing: 'easeOutQuart',
+                        duration: 200
+                    });
+                }
+
                 $('.post-page-title').fadeIn();
-            }else{
-                $('#go-up').fadeOut();
+            } else {
+                $('#go-up').velocity('stop').velocity({translateX: 0, rotateZ: 180, opacity: 0}, {
+                    easing: 'easeOutQuart',
+                    duration: 200
+                });
                 $('.post-page-title').fadeOut();
             }
 
@@ -31,15 +41,15 @@ jQuery(document).ready(function($){
     }
 
     $('#go-up').on('click', function () {
-        $('html,body').animate({scrollTop:0}, 500);
+        $('html,body').animate({scrollTop: 0}, 500);
     });
 
     /* hash change */
-    $(window).on('hashchange',function(){
-        var target = $(decodeURI(location.hash)),top = target.offset().top-65;
-        $('html,body').animate({scrollTop:top}, 500);
-        $('.toc-link[href="'+decodeURI(location.hash)+'"]').addClass('active')
-        $('.toc-link[href!="'+decodeURI(location.hash)+'"]').removeClass('active');
+    $(window).on('hashchange', function () {
+        var target = $(decodeURI(location.hash)), top = target.offset().top - 65;
+        $('html,body').animate({scrollTop: top}, 500);
+        $('.toc-link[href="' + decodeURI(location.hash) + '"]').addClass('active')
+        $('.toc-link[href!="' + decodeURI(location.hash) + '"]').removeClass('active');
     });
 
     /* 判断滚动条下拉还是上拉 */
@@ -76,16 +86,16 @@ jQuery(document).ready(function($){
     // };
 
     /* 文章toc 点击错位解决 */
-    var hashchange = function (){
-        $(window).on('hashchange',function(){
-            var target = $(decodeURI(location.hash)),top = target.offset().top-65;
-            $('html,body').animate({scrollTop:top}, 500);
-            $('.toc-link[href="'+decodeURI(location.hash)+'"]').addClass('active')
-            $('.toc-link[href!="'+decodeURI(location.hash)+'"]').removeClass('active');
+    var hashchange = function () {
+        $(window).on('hashchange', function () {
+            var target = $(decodeURI(location.hash)), top = target.offset().top - 65;
+            $('html,body').animate({scrollTop: top}, 500);
+            $('.toc-link[href="' + decodeURI(location.hash) + '"]').addClass('active')
+            $('.toc-link[href!="' + decodeURI(location.hash) + '"]').removeClass('active');
         });
     };
 
-    var progress = function (){
+    var progress = function () {
         var docHeight = $('.article-detail').height(),
             winHeight = $(window).height(),
             contentMath = (docHeight > winHeight) ? (docHeight - winHeight) : ($(document).height() - winHeight),
@@ -94,7 +104,7 @@ jQuery(document).ready(function($){
             percentage = (scrollPercentRounded > 100) ? 100 : scrollPercentRounded;
 
         $('.read-point').text(percentage)
-        $('.progress-title .progress').css('width',percentage+'%');
+        $('.progress-title .progress').css('width', percentage + '%');
     };
     // /* Nav */
     // var Annie_Nav = function() {

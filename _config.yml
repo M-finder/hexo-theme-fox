@@ -22,6 +22,7 @@ scripts:
 - /js/jquery-2.1.1.min.js
 - /js/bootstrap.min.js
 - //dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js
+- /js/velocity.min.js
 - /js/fox.js
 
 user:

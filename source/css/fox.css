@@ -386,7 +386,7 @@ h2 {
   z-index: 1027;
   padding: 25px;
   padding-top: 200px;
-  display: none;
+  opacity: 0;
 }
 .article-detail .post-page-title .progress-title {
   color: #41b883;
@@ -430,7 +430,7 @@ h2 {
   background: #41b883;
   line-height: 45px;
   text-align: center;
-  display: none;
+  opacity: 0;
 }
 #go-up i {
   font-weight: bold;
