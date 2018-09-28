@@ -108,6 +108,7 @@ h2 {
 /* header 菜单样式 */
 .top-header {
   background-size: cover;
+  box-shadow: 0 5px 6px -5px rgba(133, 133, 133, 0.6);
 }
 .header {
   background-color: rgba(255, 255, 255, 0.2);
@@ -214,6 +215,9 @@ h2 {
   width: 2px;
   height: 0;
   background-color: #337ab7;
+}
+.content-inner:hover {
+  box-shadow: 5px 5px 6px -2px rgba(133, 133, 133, 0.3);
 }
 .content-inner:hover:after {
   background-image: linear-gradient(to top, #009688, #5FB878);
@@ -341,8 +345,16 @@ h2 {
   overflow: hidden;
   /* 左侧标题列表 */
 }
+.article-detail ul,
+.article-detail ol {
+  padding-left: 25px;
+}
 .article-detail .content-inner {
   border: none;
+  box-shadow: none;
+}
+.article-detail p {
+  margin: 10px 0;
 }
 .article-detail a {
   color: #337ab7;
@@ -358,20 +370,14 @@ h2 {
 .article-detail h6 {
   font-weight: bold;
   position: relative;
-}
-.article-detail h1:hover:before,
-.article-detail h2:hover:before,
-.article-detail h3:hover:before,
-.article-detail h4:hover:before,
-.article-detail h5:hover:before,
-.article-detail h6:hover:before {
-  content: "#";
-  position: absolute;
-  left: -20px;
+  /* 解决固定菜单遮挡锚点 */
+  padding-top: 65px;
+  margin-top: -65px;
+  display: block;
+  z-index: -1;
 }
 .article-detail h5,
 .article-detail h6 {
-  color: #999;
   font-size: 14px;
 }
 .article-detail .content-inner {
@@ -388,8 +394,9 @@ h2 {
   top: 0;
   z-index: 1027;
   padding: 25px;
-  padding-top: 200px;
+  padding-top: 100px;
   opacity: 0;
+  background: #ffffff;
 }
 .article-detail .post-page-title .progress-title {
   color: #41b883;
@@ -421,8 +428,12 @@ h2 {
 .article-detail .post-page-title .active .toc-number {
   color: #ffffff;
 }
+.bottom-outer {
+  margin-top: 45px;
+}
 .footer-heart {
   color: pink!important;
+  vertical-align: middle;
 }
 #go-up {
   position: fixed;
