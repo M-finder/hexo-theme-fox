@@ -2,7 +2,20 @@ jQuery(document).ready(function ($) {
 
     "use strict";
 
-    var initTop = 0, staticHeight = 65,headerHeight = 305;
+    var initTop = 0, staticHeight = 65,headerHeight = 410;
+
+    if (window.console) {
+        var cons = console;
+        if (cons) {
+            // cons.log("%c\n      ", "font-size:30px;background:url('http://www.m-lit.com/img/logo.png') no-repeat center;");
+            cons.log("                 __  _             _             ");
+            cons.log("  /\\/\\          / _|(_) _ __    __| |  ___  _ __ ");
+            cons.log(" /    \\  _____ | |_ | || '_ \\  / _` | / _ \\| '__|");
+            cons.log("/ /\\/\\ \\|_____||  _|| || | | || (_| ||  __/| |   ");
+            cons.log("\\/    \\/       |_|  |_||_| |_| \\__,_| \\___||_|   ");
+            cons.log('M-finder - 删繁就简，发现更多');
+        }
+    }
 
     /* loading */
     var loader = function () {
@@ -26,10 +39,10 @@ jQuery(document).ready(function ($) {
             findHeadPosition(currentTop);
 
             /* 头部菜单样式 */
-            var opcaity = (currentTop / 250 > 1) ? 1 : currentTop / 250 <= 0 ? .2 : currentTop / 250;
-            var shadow = (currentTop / 250 > 1) ? .7 : 0;
+            var opcaity = (currentTop / headerHeight > 1) ? 1 : currentTop / headerHeight <= 0 ? .2 : currentTop / headerHeight;
+            var shadow = (currentTop / headerHeight > 1) ? .7 : 0;
             $('.header').css({
-                'background': 'rgba(255,255,255,' + opcaity + ')',
+                'background': 'rgba(240,240,240,' + opcaity + ')',
                 'box-shadow': '0 5px 6px -5px rgba(133,133,133,' + shadow + ')'
             });
 

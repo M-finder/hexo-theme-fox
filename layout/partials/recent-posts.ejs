@@ -12,6 +12,7 @@
                         <h1 class="article-title">
                             <time class="post-info post-time" datetime="<%= post.date.toJSON() %>"><%=date(post.date)%></time>
                             <%= post.title %>
+                            <% console.log(post.categories.data) %>
                         </h1>
                     </a>
                     <div class="article-description">

@@ -31,7 +31,7 @@ body {
   background: @base-color-f2;
   a {
     text-decoration: none;
-    color: @base-color-41;
+    color: #333;
     &:hover {
       text-decoration: none;
     }
@@ -151,7 +151,7 @@ h2 {
             padding: 10px;
             font-weight: 500;
             &:hover {
-              color: @base-color-41;
+              color: #000;
               &:after {
                 width: 100%;
               }
@@ -170,14 +170,15 @@ h2 {
 .header-logo-container {
   padding-top: 0;
   text-align: center;
-  margin-top:65px;
+  margin-top:100px;
   .main-container {
 
   }
   /* logo-container */
   .logo-container {
     margin: 0px auto;
-    .logo-link {
+    line-height: 100px;
+    .logo-img {
       display: inline-block;
       overflow: hidden;
       transition: All 0.4s ease-in-out;
@@ -192,8 +193,8 @@ h2 {
         -ms-transform: rotate(360deg);
       }
       img {
-        max-height: 65px;
-        max-width: 120px;
+        max-height: 100px;
+        max-width: 100px;
         width: auto;
         vertical-align: middle;
       }
@@ -202,7 +203,33 @@ h2 {
       margin-top: 0;
       font-size: 32px;
       letter-spacing: 2px;
-      color: #333
+      color: #333;
+      &:before, &:after{
+        color:@base-color-41;
+        opacity: 0;
+        font-weight: bold;
+        transition: All 0.4s ease-in-out;
+        -webkit-transition: All 0.4s ease-in-out;
+        -moz-transition: All 0.4s ease-in-out;
+        -o-transition: All 0.4s ease-in-out;
+      }
+      &:before{
+        content: '[';
+        margin-right: 10px;
+      }
+      &:after{
+        position:relative;
+        width: auto;
+        height: auto;
+        background:none;
+        content: ']';
+        margin-left: 10px;
+      }
+      &:hover{
+        &:after, &:before{
+          opacity: 1;
+        }
+      }
     }
     .web-subtitle {
       font-size: 14px;
@@ -259,13 +286,13 @@ h2 {
     padding:0;
     height: auto;
     background: no-repeat center;
-    background-size: 110%;
-    transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
+    background-size: 100%;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
     &:hover{
-      background-size: 100%;
+      background-size: 110%;
     }
   }
   .border-box{
@@ -295,10 +322,9 @@ h2 {
         font-size: 18px;
       }
       &:hover {
-        opacity: .7;
         padding-left: 20px;
-        &:after {
-
+        time{
+          color: @base-color-41;
         }
       }
     }
@@ -422,7 +448,7 @@ h2 {
 
   /* 左侧标题列表 */
   .post-page-title{
-    max-width: 300px;
+    width: 250px;
     height:100vh;
     position: fixed;
     left: 0;
@@ -433,7 +459,7 @@ h2 {
     opacity: 0;
     background: #ffffff;
     .progress-title{
-      color: #41b883;
+      color: @base-color-41;
       position: relative;
       margin-bottom:25px;
       .progress{
@@ -441,7 +467,7 @@ h2 {
         bottom: -20px;
         left: 0;
         height: 1px;
-        background: #41b883;
+        background: @base-color-41;
       }
       .read-point{
         color: @base-color;
@@ -454,6 +480,12 @@ h2 {
     .toc-link{
       padding: 5px 10px;
       display: block;
+      &:hover{
+        .toc-number,.toc-text{
+          color: @base-color-41;
+        }
+
+      }
     }
     .active{
       background: @base-color;
