@@ -2,8 +2,11 @@
 var categoriesList = list_categories({ show_count: false }),
         tagsList = list_tags({ show_count: false }),
         archivesList = list_archives({ show_count: false }),
-        articlesList =  list_posts({  });
+        articlesList =  list_posts({ amount: 0 });
 %>
+
+<%- list_posts({"order":-1,"class":"article-header","amount":0}) %>
+
 
 <% if (!is_year()) { %>
     <div id="archive">
@@ -22,6 +25,16 @@ var categoriesList = list_categories({ show_count: false }),
             <h2>Categories</h2>
             <% if (categoriesList) { %>
             <%-categoriesList%>
+            <% } else { %>
+                <p>None.</p>
+            <% } %>
+        </aside>
+        <br>
+
+        <aside>
+            <h2>Articles</h2>
+            <% if (articlesList) { %>
+            <%-articlesList%>
             <% } else { %>
                 <p>None.</p>
             <% } %>
