@@ -41,9 +41,13 @@ user:
       url:
       icon:
 wordcount: true
+
 article:
   number: 5
   cover: /images/cover.jpg
   length: 100
+  toc: true #文章目录是否显示
 banner:
-- /images/banner2.jpg #宽高：1600*600
+- /images/banner.jpg #宽高：1600*600
+loading:
+- /images/loading5.svg

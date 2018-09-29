@@ -2,7 +2,7 @@ jQuery(document).ready(function ($) {
 
     "use strict";
 
-    var initTop = 0, staticHeight = 65,headerHeight = 410;
+    var initTop = 0, staticHeight = 65,headerHeight = 265;
 
     if (window.console) {
         var cons = console;
@@ -22,9 +22,8 @@ jQuery(document).ready(function ($) {
         $(window).on("load", function () {
             $(".status").fadeOut();
             $(".loader").delay(400).fadeOut("slow");
-            var hash = window.location.hash;
-            console.log(hash)
-            updateAnchor(hash),scrollToHead(hash);
+            var hash = decodeURI(window.location.hash);
+            if(hash) updateAnchor(hash),scrollToHead(hash);
         });
     };
 

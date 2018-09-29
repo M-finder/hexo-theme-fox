@@ -96,6 +96,12 @@ h2 {
   background-image: linear-gradient(to top, #009688, #5FB878);
 }
 
+hr{
+  height: 3px;
+  border: none;
+  background-color: #ddd;
+  background-image: repeating-linear-gradient(-45deg,#fff,#fff 4px,transparent 4px,transparent 8px);
+}
 /* loading */
 .loader {
   position: fixed;
@@ -113,14 +119,16 @@ h2 {
     background-position: center center;
     text-align: center;
     margin: -40px 0 0 -100px;
-    .loader-logo {
-      margin-top: -80px;
-    }
     .loading {
       margin-top: 20px;
       font-size: 24px;
       text-align: center;
       color: @base-color-41;
+    }
+    .loading-img{
+      width: 50px;
+      height: 50px;
+      margin-top: 20px;
     }
   }
 }
@@ -178,27 +186,6 @@ h2 {
   .logo-container {
     margin: 0px auto;
     line-height: 100px;
-    .logo-img {
-      display: inline-block;
-      overflow: hidden;
-      transition: All 0.4s ease-in-out;
-      -webkit-transition: All 0.4s ease-in-out;
-      -moz-transition: All 0.4s ease-in-out;
-      -o-transition: All 0.4s ease-in-out;
-      &:hover {
-        transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-      }
-      img {
-        max-height: 100px;
-        max-width: 100px;
-        width: auto;
-        vertical-align: middle;
-      }
-    }
     .web-title {
       margin-top: 0;
       font-size: 32px;
@@ -462,6 +449,7 @@ h2 {
       color: @base-color-41;
       position: relative;
       margin-bottom:25px;
+      width: 100%;
       .progress{
         position: absolute;
         bottom: -20px;
@@ -480,6 +468,9 @@ h2 {
     .toc-link{
       padding: 5px 10px;
       display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       &:hover{
         .toc-number,.toc-text{
           color: @base-color-41;
@@ -500,7 +491,8 @@ h2 {
   margin-top:45px;
 }
 .footer-heart{
-  color: pink!important;
+  width: 25px;
+  height:25px;
   vertical-align: middle;
 }
 #go-up{
@@ -531,6 +523,8 @@ h2 {
   margin: 0px;
   color: #333333;
   line-height: 24px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .article-detail .highlight .gutter pre, .article-detail .gist .gist-file .gist-data .line-numbers {
