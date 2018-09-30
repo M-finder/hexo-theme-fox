@@ -40,13 +40,15 @@ user:
     rss:
       url:
       icon:
+#文章字数和阅读时间统计
 wordcount: true
 
 article:
   number: 5
-  cover: /images/cover.jpg
+  cover: /images/cover2.jpg
   length: 100
   toc: true #文章目录是否显示
+
 banner:
 - /images/banner.jpg #宽高：1600*600
 loading:
