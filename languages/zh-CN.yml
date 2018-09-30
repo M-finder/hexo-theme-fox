@@ -21,3 +21,4 @@ word_count: 字数统计
 min2read: 预计阅读时长
 minute: 分钟
 created_at: 发布时间
+total: 目前共计： %s 篇文章

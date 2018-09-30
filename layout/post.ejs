@@ -5,6 +5,24 @@
         </h1>
 
         <div class="post-info-box">
+            <% if (page.categories && page.categories.length) { %>
+                <span class="post-info">分类：</span>
+                <%- list_categories(page.categories, {
+                    show_count: false,
+                    class: 'post-info post-info',
+                    style: 'none',
+                    separator: ''
+                }) %>
+            <% } %>
+            <% if (page.tags && page.tags.length) { %>
+                <span class="post-info">标签：</span>
+                <%- list_tags(page.tags, {
+                    show_count: false,
+                    class: 'post-info post-info',
+                    style: 'none',
+                    separator: ''
+                }) %>
+            <% } %>
             <time class="post-info post-time" datetime="<%= page.date.toJSON() %>"><%= __('created_at') %>：<%= date(page.date) %></time>
             <% if(theme.wordcount === true){ %>
             <span class="post-info"><%= __('word_count') %>：<%= wordcount(page.content) %></span>

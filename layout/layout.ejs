@@ -25,7 +25,20 @@ if (is_home()) pageTitle += ' - ' + config.title;
 <body>
 
 <div class="loader">
+
     <div class="status">
+        <div class="wrapper">
+            <div class="fox-header">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+
+            <div class="what"></div>
+            <div class="does"></div>
+            <div class="the"></div>
+            <div class="foxs"></div>
+            <div class="say"></div>
+        </div>
         <div class="loading">loading, please wait ...</div>
         <img class="loading-img" src="<%- theme.loading %>">
     </div>
@@ -88,7 +101,7 @@ if (is_home()) pageTitle += ' - ' + config.title;
     </div>
 </div>
 <div id="go-up">
-    <a href="javascript:;"><i class="fox icon-shangfan"></i></a>
+    <a href="javascript:;"><i class="fox icon-jiantoushang1"></i></a>
 </div>
 <% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
     <!-- scripts list from theme config.yml -->

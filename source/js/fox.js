@@ -31,7 +31,6 @@ jQuery(document).ready(function ($) {
     var scroll = function () {
         $(window).scroll(function () {
             var currentTop = $(this).scrollTop();
-
             /* 阅读进度 */
             progress(currentTop);
             /* 目录定位 */

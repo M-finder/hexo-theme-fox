@@ -3,20 +3,46 @@
     <% page.posts.sort('date', -1).limit(theme.article.number).each(function(post) { %>
         <div class="col-md-8 col-sm-12 col-xs-12 content-inner col-md-offset-2">
             <a href="<%= config.root + post.path %>">
-                <div class="col-md-6 article-cover"  style="background-image: url('<%=post.cover || theme.article.cover%>')"></div>
+                <div class="col-md-6 article-cover"
+                     style="background-image: url('<%= post.cover || theme.article.cover %>')"></div>
             </a>
 
-            <div class="col-md-6 border-box" >
+            <div class="col-md-6 border-box">
                 <div class="recent-post-item">
                     <a class="article-title-link" href="<%= config.root + post.path %>">
                         <h1 class="article-title">
-                            <time class="post-info post-time" datetime="<%= post.date.toJSON() %>"><%=date(post.date)%></time>
                             <%= post.title %>
-                            <% console.log(post.categories.data) %>
                         </h1>
                     </a>
+
+                    <time class="post-info post-time" datetime="<%= post.date.toJSON() %>"><%= date(post.date) %></time>
+                    <!-- 分类 -->
+                    <% if (post.categories && post.categories.length) { %>
+                        <i class="fox icon-lianjie"></i>
+                        <%- list_categories(post.categories, {
+                            show_count: false,
+                            class: 'post-info post-info',
+                            style: 'none',
+                            separator: ''
+                        }) %>
+                    <% } %>
+
+                    <!-- 标签 -->
+                    <% if (post.tags && post.tags.length) { %>
+                        <i class="fox icon-biaoqian"></i>
+                        <%- list_tags(post.tags, {
+                            show_count: false,
+                            class: 'post-info post-info',
+                            style: 'none',
+                            separator: ''
+                        }) %>
+                    <% } %>
+
+
+
                     <div class="article-description">
-                        <%= strip_html(post.description).substring(0, theme.article.length) || strip_html(post.content).substring(0, theme.article.length); %>...
+                        <%= strip_html(post.description).substring(0, theme.article.length) || strip_html(post.content).substring(0, theme.article.length); %>
+                        ...
                     </div>
                     <div class="read-more">
                         <a href="<%= config.root + post.path %>" class="read-more-link"> read more</a>
