@@ -44,7 +44,6 @@ user:
 wordcount: true
 
 article:
-  number: 5
   cover: /images/cover2.jpg
   length: 100
   toc: true #文章目录是否显示
