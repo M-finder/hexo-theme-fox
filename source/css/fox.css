@@ -1,4 +1,4 @@
-@import "//at.alicdn.com/t/font_817120_bnje11fbkqk.css";
+@import "//at.alicdn.com/t/font_817120_xqvptpgj7f.css";
 * {
   margin: 0 auto;
   padding: 0;
@@ -746,6 +746,27 @@ hr {
 }
 .timeline .tile-subtitle {
   color: #acb3c2;
+}
+/*tag*/
+.tagscloud a {
+  margin: 15px;
+  display: inline-block;
+}
+/* 404 */
+.site-heading {
+  text-align: center;
+}
+.faceicon {
+  line-height: 300px;
+  font-size: 300px;
+  color: #41b883;
+}
+.title-error {
+  font-size: 100px;
+  line-height: 100px;
+  text-align: center;
+  border-top: 3px solid #41b883;
+  color: #41b883;
 }
 /* 高亮*/
 .article-detail pre,
