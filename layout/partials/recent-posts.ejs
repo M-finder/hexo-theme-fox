@@ -4,7 +4,7 @@
         <div class="col-md-8 col-sm-12 col-xs-12 content-inner col-md-offset-2">
             <a href="<%= config.root + post.path %>">
                 <div class="col-md-6 article-cover"
-                     style="background-image: url('<%= post.cover || theme.article.cover %>')"></div>
+                     style="background-image: url('<%= post.cover || "images/cover"+Math.ceil(Math.random()*7)+".jpg" %>')"></div>
             </a>
 
             <div class="col-md-6 border-box">
